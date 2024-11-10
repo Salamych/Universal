@@ -1,0 +1,45 @@
+@import '../config/variables.scss';
+
+*{
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body{
+  font-family: $lato;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+ul, li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 $offset*2;	
+}
+
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: $offset*(-1);
+}
+
+.col{
+	margin: $offset;
+	box-sizing: border-box;
+}

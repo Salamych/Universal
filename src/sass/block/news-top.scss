@@ -1,0 +1,40 @@
+@import '../base/base.scss';
+@import '../config/variables.scss';
+@import '../config/mixin.scss';
+
+.news-top{
+  background-color: $black-bg;
+  padding: 30px 0;
+}
+
+.news-top__wrapper{
+  background-color: #30363d;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.news-top__list{
+  display: flex;
+  justify-content: space-between;
+  gap: $offset*2.5;
+}
+
+.news-top__item{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: $offset*1.5;
+  color: #fff;
+  font-size: 16px;
+  font-family: $roboto;
+}
+
+.news-top__item-img{
+  width: 65px;
+  height: 65px;
+}
+
+.news-top__item-img img{
+  display: block;
+  width: 100%;
+}
