@@ -1,0 +1,196 @@
+@import '../base/base.scss';
+@import '../config/variables.scss';
+@import '../config/mixin.scss';
+
+.recomendation-top-float__wrapper{
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  @include screen-maxw(625px){
+    flex-direction: column;
+  }
+}
+
+.float-main{
+  width: calc((100%/12)*9);
+  background-image: url(../img/southeast-england-mounts.png); 
+  padding-top: 55px;
+  padding-left: 55px;
+  @include screen-maxw(975px){
+    padding-top: 25px;
+    padding-left: 25px;
+  }
+  @include screen-maxw(820px){
+    width: calc((100%/12)*8)
+  }
+  @include screen-maxw(625px){
+    width: 100%;
+  }
+  &__author{
+    display: flex;
+    align-items: center;
+    gap: $offset;
+    color: #fff;
+    margin-bottom: 145px;
+    @include screen-maxw(975px){
+      margin-bottom: 75px;
+    }
+    &-name{
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    &-work{
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+
+  &__description{
+    color: #fff;
+    &-rubric{
+      font-size: 12px;
+      color: $blue-bg;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+    &-article_title{
+      font-family: $roboto;
+      font-size: 40px;
+      font-weight: 800;
+      max-width: calc((100%/12)*9);
+      @include screen-maxw(820px){
+        font-size: 30px;
+      }
+      @include screen-maxw(625px){
+        width: 100%;
+      }
+    }
+  }
+  &__info{
+    display: flex;
+    gap: $offset*3;
+    color: #fff;
+    padding-bottom: 75px;
+    @include screen-maxw(975px){
+      padding-bottom: 25px;
+    }
+    @include screen-maxw(690px){
+      flex-direction: column;
+    }
+    &-link{
+      display: flex;
+      align-items: center;
+      &_text{
+        padding: 10px 25px;
+        background-color: $blue-bg;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      & a{
+        color: inherit;
+      }
+    }
+    &-media{
+      display: flex;
+      gap: $offset;
+      align-items: center;
+
+      &_text-title{
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      &_text-time{
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+  }
+  
+}
+
+
+.float-asside{
+  width: calc((100%/12)*3);
+  font-size: 14px;
+  @include screen-maxw(820px){
+    width: calc((100%/12)*4)
+  }
+  @include screen-maxw(625px){
+    width: 100%;
+  }
+  &__title{
+    padding: 20px 25px;
+    color: $black-bg;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include screen-maxw(975px){
+      padding: $offset;
+    }
+  }
+
+  &__item{
+    padding: $offset*2 $offset*2.5;
+    border-top: 1px solid $gray-border;
+    border-bottom: 1px solid $gray-border;
+    position: relative;
+    @include screen-maxw(975px){
+      padding: $offset;
+    }
+    &:last-child{
+    border-bottom: none;
+    }
+    &-title{
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+  }
+}
+
+.float-asside__item-active{
+  background-color: #f5f5f5;
+}
+
+.float-asside__item-active::before{
+  position: absolute;
+  top: calc(50% - 10px);
+  left: -$offset*2;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 20px solid #f5f5f5;
+  border-bottom: 12px solid transparent;
+  @include screen-maxw(625px){
+    display: none;
+  }
+}
+
+.color{
+  &-food{
+    color: $blue-bir;
+  }
+  &-cars{
+    color: $blue-gray;
+  }
+  &-movie{
+    color: $violet;
+  }
+  &-nfl{
+    color: $orange;
+  }
+  &-tech{
+    color: $green-lt;
+  }
+}
+
+
+/*
+  width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-right: 40px solid red;
+	border-bottom: 20px solid transparent;  
+*/
