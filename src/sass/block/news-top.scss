@@ -5,6 +5,9 @@
 .news-top{
   background-color: $black-bg;
   padding: 30px 0 315px 0;
+  @include screen-maxw(975px){
+    padding-bottom: 30px;
+  }
   @include screen-maxw(600px){
     justify-content: start;
     padding: $offset 0;

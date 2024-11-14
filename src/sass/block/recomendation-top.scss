@@ -1,6 +1,29 @@
 @import '../base/base.scss';
 @import '../config/variables.scss';
 @import '../config/mixin.scss';
+.recomendation-top{
+  background-color: #EDEFF0;
+  position: relative;
+  @include screen-maxw(975px){
+    padding-top: 30px;
+  }
+}
+
+.recomendation-top-float{
+  position: absolute;
+  top: -24%;
+  right: 0; 
+  left: 0;
+  @include screen-maxw(1020px){
+    top: -17%;
+  }
+  @include screen-maxw(975px){
+    position: relative;
+  }
+}
+.recomendation-top-float__relative{
+  
+}
 
 .recomendation-top-float__wrapper{
   display: flex;
@@ -111,6 +134,7 @@
 
 
 .float-asside{
+  background-color: #fff;
   width: calc((100%/12)*3);
   font-size: 14px;
   @include screen-maxw(820px){
@@ -186,11 +210,426 @@
   }
 }
 
+/*recomendation-top-base*/
 
-/*
-  width: 0;
-	height: 0;
-	border-top: 20px solid transparent;
-	border-right: 40px solid red;
-	border-bottom: 20px solid transparent;  
-*/
+.recomendation-top-base{
+  padding-top: 315px;
+  @include screen-maxw(975px){
+    padding-top: 30px;
+  }
+}
+
+.recomendation-top-base-wrapper{
+  display: flex;
+
+  padding-bottom: 60px;
+  @include screen-maxw(970px){
+    flex-wrap: wrap;
+  }
+}
+
+.recomendation-top-base__main{
+  width: calc((100%/12)*9);
+  display: grid;
+  gap: $offset*3;
+  margin-right: 20px;
+  grid-template-areas:
+    "car car car tatoo"
+    "car car car tatoo"
+    "cat cat coffee maufacture"
+    "cat cat stressful lemon";
+
+    @include screen-maxw(1020px){
+      flex-direction: column;
+      grid-template-areas:
+      "car car"
+      "tatoo tatoo"
+      "cat coffee"
+      "cat maufacture"
+      "stressful lemon";
+      width: calc((100%/12)*7);
+    }
+    @include screen-maxw(970px){
+      grid-template-areas:
+      "car"
+      "tatoo"
+      "cat"
+      "coffee"
+      "maufacture"
+      "stressful"
+      "lemon";
+      gap: $offset;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &-car{
+      grid-area: car;
+      background-color: #fff;
+      padding-top: $offset*3.5;
+      padding-left: $offset*3.5;
+      border-radius: 10px;
+      overflow: hidden;
+
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+      &_desc{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        @include screen-maxw(600px){
+          display: block;
+        }
+        &-img{
+          width: calc((100%/12)*6);
+          @include screen-maxw(600px){
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        &-overview{
+          width: calc((100%/12)*6 - $offset);
+          @include screen-maxw(600px){
+            width: 100%;
+          }
+          &_rubric{
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $blue-gray;
+            margin-bottom: 20px;
+          }
+
+          &_title{
+            font-size: 25px;
+            font-family: $roboto;
+            color: $black-bg;
+            font-weight: 700;
+            margin-bottom: 25px;
+            @include screen-maxw(600px){
+              margin-right: $offset;
+            }
+          }
+          &_text{
+            font-size: 14px;
+            color: $gray-darck;
+            margin-bottom: 50px;
+            @include screen-maxw(600px){
+              margin-right: $offset;
+            }
+          }
+        }
+      }
+
+      &_author{
+        border-top: 1px solid $gray-border;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        display: flex;
+
+        @include screen-maxw(600px){
+          display: block;
+        }
+
+        &-img{
+          margin-right: $offset;
+        }
+        
+        &-name{
+          font-size: 14px;
+          color: $black-bg;
+          font-weight: 700;
+          margin-right: 5px;
+          @include screen-maxw(600px){
+            margin-top: 10px;
+          }
+        }
+
+        &-article_prev{
+          font-size: 14px;
+          color: $gray-darck;
+          margin-right: $offset;
+          @include screen-maxw(600px){
+            margin-top: 5px;
+          }
+        }
+
+        &-social_img-coment{
+          display: flex;
+          &-img{
+            margin-right: 5px;
+          }
+          &-text{
+            font-size: 12px;
+            color: $gray-text;
+            font-weight: 300;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    &-tatoo{
+      grid-area: tatoo;
+      overflow: hidden;
+      background-image: url(../img/tatoo-on-arm.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 10px;
+      padding: 18px 25px 25px 25px;
+      position: relative;
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+
+      &_rubric{
+        margin-top: $offset*16;
+        margin-bottom: $offset;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $violet-lt;
+      }
+
+      &_title{
+        font-family: $roboto;
+        font-size: 16px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: $offset*1.5;
+      }
+
+      &_author{
+        display: flex;
+        align-items: center;
+        gap: $offset;
+
+        &-overview{
+          color: #fff;
+
+          &_name{
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+
+          &_social{
+            font-size: 12px;
+            display: flex;
+            gap: $offset;
+
+            &-coment{
+              display: flex;
+              gap: $offset/2;
+            }
+
+            &-like{
+              display: flex;
+              gap: $offset/2;
+            }
+          }
+        }
+      }
+
+      &::before{
+        position: absolute;
+        content: 'Popular';
+        font-size: 12px;
+        color: #fff;
+        font-weight: 700;
+        background-color: $green-lt;
+        padding: 5px 12px;
+        border-radius: 3px;
+      }
+    }
+
+    &-cat{
+      grid-area: cat;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #fff;
+      
+
+      &_img{
+        display: flex;
+        justify-content: center;
+      }
+      
+      &_title{
+        padding: 15px 25px 30px;
+        font-size: 16px;
+        font-family: $roboto;
+        font-weight: 700;
+        color: $black-bg;
+        @include screen-maxw(600px){
+          padding-left: $offset;
+        }
+      }
+    }
+
+    &-coffee{
+      grid-area: coffee;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px 25px 30px;
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+    }
+
+    &-maufacture{
+      grid-area: maufacture;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px 25px 30px;
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+    }
+
+    &-stressful{
+      grid-area: stressful;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px 25px 30px;
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+    }
+    &-lemon{
+      grid-area: lemon;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px 25px 30px;
+      @include screen-maxw(600px){
+        padding-left: $offset;
+      }
+    }
+
+    &-item{
+      &_title{
+        font-size: 16px;
+        font-family: $roboto;
+        font-weight: 700;
+        color: $black-bg;
+        margin-bottom: 5px;
+      }
+
+      &_text{
+        font-size: 14px;
+        color: $gray-darck;
+        margin-bottom: $offset;
+      }
+
+      &_time{
+        font-size: 12px;
+        color: $gray-text;
+      }
+    }
+}
+
+
+
+/*recomendation-top-base__asside*/
+
+.recomendation-top-base__asside{
+  width: calc((100%/12)*3);
+  background-color: $blue-gray;
+  color: #fff;
+  border-radius: 10px; 
+  
+  @include screen-maxw(1020px){
+    width: calc((100%/12)*5);
+  }
+  @include screen-maxw(970px){
+    width: 100%;
+  }
+
+  &-title{
+    border-bottom: 1px solid $blue-border;
+    padding: $offset*2 $offset*2.5;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include screen-maxw(600px){
+      padding-left: $offset;
+    }
+  }
+
+  &-list{
+    padding: 0 $offset*2.5;
+    @include screen-maxw(600px){
+      padding-left: $offset;
+    }
+
+    &_item{
+      position: relative;
+      margin-top: $offset*4.5;
+      padding-bottom: $offset*4.5;
+      border-bottom: 1px solid $blue-border;
+
+      &:last-child{
+        border-bottom: none;
+      }
+
+      &::before{
+        position: absolute;
+        content: ',,';
+        font-size: 120px;
+        font-family: $roboto;
+        transform: rotate(180deg);
+        color: #55839E;
+        top: -5%;
+        left: -7%;
+        z-index: 0;
+        @include screen-maxw(970px){
+          left: -3%;
+        }
+      }
+
+      &-title{
+        position: relative;
+        font-size: 20px;
+        font-family: $roboto;
+        font-weight: 700;
+        margin-bottom: $offset*1.5;
+        z-index: 1;
+      }
+
+      &-author{
+        display: flex;
+        align-items: center;
+        color: $blue-text;
+
+        &_img{
+          margin-right: $offset;
+        }
+
+        &_overview-name{
+          font-size: 14px;
+          margin-bottom: 2px;
+        }
+
+        &_overview-work{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &-readmore{
+    border-top: 1px solid $blue-border;
+    padding: $offset 0 $offset*1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a{
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+}
