@@ -1,0 +1,229 @@
+@import '../base/base.scss';
+@import '../config/variables.scss';
+@import '../config/mixin.scss';
+
+.news-middle{
+  background-color: $blue-back;
+  padding: $offset*6 0;
+}
+
+.news-middle__main{
+  display: inline-block;
+  width: calc((100%/12)*9 - $offset*3);
+  margin-right: $offset*3;
+
+  @include screen-maxw(1080px){
+    margin-right: $offset*1.5;
+  }
+
+  @include screen-maxw(980px){
+    display: block;
+    width: 100%;
+  }
+
+  &-list{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0 $offset*2.5;
+    @include screen-maxw(600px){
+      padding: 0 $offset;
+    }
+
+    &_item{
+      position: relative;
+      padding: $offset*2.5 0;
+      display: flex;
+      align-items: center;
+      gap: $offset*2.5;
+      border-bottom: 1px solid $gray-border;
+      @include screen-maxw(830px){
+        flex-wrap: wrap;
+      }
+
+      &:last-child{
+        border-bottom: none;
+      }
+      
+      &-img{
+        width: calc((100%/12)*5);
+        @include screen-maxw(830px){
+          width: 100%;
+        }
+      }
+
+      &-overview{
+        width: calc((100%/12)*7);
+        @include screen-maxw(830px){
+          width: 100%;
+        }
+
+        & h2{
+          margin: 0;
+        }
+
+        &_rubric{
+          font-size: 12px;
+          text-transform: uppercase;
+          margin-bottom: $offset*1.5;
+        }
+
+        &_title{
+          font-size: 20px;
+          font-family: $roboto;
+          font-weight: 700;
+          color: $black-bg;
+          padding-bottom: 10px;
+        }
+
+        &_text{
+          font-size: 14px;
+          color: $gray-darck;
+          margin-bottom: $offset*2;
+        }
+      }
+
+
+      &-overview_social{
+        display: flex;
+        gap: $offset;
+        font-size: 12px;
+        color: $gray-text;
+
+        &-coment{
+          display: flex;
+          gap: 5px;
+
+        }
+
+        &-like{
+          display: flex;
+          gap: 5px;
+
+        }
+      }
+    }
+  }
+}
+
+.news-middle__main-list_item-active::before{
+  position: absolute;
+  content: '';
+  right: 0;
+  top: $offset*2.5;
+  width: 14px;
+  height: 18px;
+  background-image: url(../img/svg/sprite.svg#red-bookmark);
+  background-repeat: no-repeat;
+}
+.news-middle__main-list_item-noactive::before{
+  position: absolute;
+  content: '';
+  right: 0;
+  top: $offset*2.5;
+  width: 14px;
+  height: 18px;
+  background-image: url(../img/svg/sprite.svg#bookmark-gray);
+  background-repeat: no-repeat;
+} 
+
+
+/*news-middle__asside*/
+
+.news-middle__asside{
+  display: inline-block;
+  vertical-align: top;
+  width: calc((100%/12)*3 - $offset);
+  background-color: #fff;
+  border-radius: 10px;
+
+  @include screen-maxw(980px){
+    display: block;
+    width: 100%;
+  }
+
+  &-title{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $black-bg;
+    padding: $offset*2 $offset*2.5;
+    border-bottom: 1px solid $gray-border;
+    @include screen-maxw(600px){
+      padding: $offset*2 $offset;
+    }
+  }
+
+  &-list{
+    padding: 0 $offset*2.5;
+    counter-reset: item 0;
+    @include screen-maxw(600px){
+      padding: 0 $offset;
+    }
+
+    &_item{
+      position: relative;
+      counter-increment: item 1;
+      padding: 17px 0;
+      border-bottom: 1px solid $gray-border;
+      display: flex;
+      z-index: 1;
+
+      &::before{
+        position: absolute;
+        content: counter(item);
+        font-size: 70px;
+        font-weight: 700;
+        color: $black-bg;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        opacity: 0.08;
+      }
+
+      &:last-child{
+        border-bottom: none;
+      }
+
+      &-img{
+        width: calc((100%/12)*4);
+        margin-right: $offset;
+        @include screen-maxw(1080px){
+          width: calc((100%/12)*5);
+        }
+
+      }
+      &-overview{
+        width: calc((100%/12)*8);
+        @include screen-maxw(1080px){
+          width: calc((100%/12)*7);
+        }
+
+        &_text{
+          position: relative;
+          z-index: 1;
+          font-size: 14px;
+          color: $gray-darck;
+          margin-bottom: 5px;
+        }
+
+        &_time{
+          font-size: 12px;
+          color: $gray-text;
+        }
+      }
+    }
+  }
+
+  &-readmore{
+    padding: $offset 0 $offset*1.5;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid $gray-border;
+    & a{
+      color: $black-bg;
+      font-weight: 700;
+    }    
+  }
+}
+

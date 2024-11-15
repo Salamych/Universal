@@ -43,3 +43,28 @@ a{
 	margin: $offset;
 	box-sizing: border-box;
 }
+
+
+.color{
+  &-food{
+    color: $blue-bir;
+  }
+  &-flights{
+    color: $blue-bg;
+  }
+  &-cars{
+    color: $blue-gray;
+  }
+  &-movie{
+    color: $violet;
+  }
+  &-nfl{
+    color: $orange;
+  }
+  &-science{
+    color: $red;
+  }
+  &-tech{
+    color: $green-lt;
+  }
+}

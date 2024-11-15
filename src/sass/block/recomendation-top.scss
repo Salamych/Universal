@@ -2,7 +2,7 @@
 @import '../config/variables.scss';
 @import '../config/mixin.scss';
 .recomendation-top{
-  background-color: #EDEFF0;
+  background-color: $blue-back;
   position: relative;
   @include screen-maxw(975px){
     padding-top: 30px;
@@ -21,9 +21,7 @@
     position: relative;
   }
 }
-.recomendation-top-float__relative{
-  
-}
+
 
 .recomendation-top-float__wrapper{
   display: flex;
@@ -192,23 +190,7 @@
   }
 }
 
-.color{
-  &-food{
-    color: $blue-bir;
-  }
-  &-cars{
-    color: $blue-gray;
-  }
-  &-movie{
-    color: $violet;
-  }
-  &-nfl{
-    color: $orange;
-  }
-  &-tech{
-    color: $green-lt;
-  }
-}
+
 
 /*recomendation-top-base*/
 
@@ -221,7 +203,6 @@
 
 .recomendation-top-base-wrapper{
   display: flex;
-
   padding-bottom: 60px;
   @include screen-maxw(970px){
     flex-wrap: wrap;
@@ -399,7 +380,7 @@
         color: #fff;
         text-transform: uppercase;
         font-weight: 600;
-        margin-bottom: $offset*1.5;
+        margin-bottom: $offset*3;
       }
 
       &_author{
