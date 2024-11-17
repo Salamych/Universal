@@ -1,0 +1,165 @@
+@import '../base/base.scss';
+@import '../config/variables.scss';
+@import '../config/mixin.scss';
+
+.footer-nav{
+  margin-bottom: 60px;
+  @include screen-maxw(600px){
+    margin-bottom: 20px;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item{
+      width: calc((100%/12)*2);
+
+      @include screen-maxw(800px){
+        width: calc((100%/12)*4);
+        margin-bottom: 20px;
+      }
+      @include screen-maxw(600px){
+        width: calc((100%/12)*6);
+      }
+      @include screen-maxw(300px){
+        width: 100%;
+      }
+      
+
+      &_menu{
+        font-size: 14px;
+        &-li{
+          margin-top: 15px;
+
+          & a{
+            color: $gray-darck;
+          }
+
+          &-head{
+            margin-top: 35px;
+            margin-bottom: 35px;
+
+            & a{
+              color: $black-bg;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.border{
+  &-news{
+    border-top: 5px solid $red;
+  }
+  &-arts{
+    border-top: 5px solid $violet;
+  }
+  &-travel{
+    border-top: 5px solid $blue-bg;
+  }
+  &-sports{
+    border-top: 5px solid $orange;
+  }
+  &-tech{
+    border-top: 5px solid $green-lt;
+  }
+  &-money{
+    border-top: 5px solid $blue-gray;
+  }
+}
+
+/*footer-contacts*/
+
+.footer-contacts{
+  
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid $gray-border;
+    border-bottom: 1px solid $gray-border;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include screen-maxw(810px){
+      flex-wrap: wrap;
+    }
+  }
+
+  &__nav{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include screen-maxw(810px){
+      gap: 15px;
+    }
+    @include screen-maxw(600px){
+      flex-wrap: wrap;
+    }
+    &-menu{
+      display: flex;
+      gap: 30px;
+      @include screen-maxw(810px){
+        gap: 15px;
+      }
+      @include screen-maxw(600px){
+        flex-wrap: wrap;
+      }
+
+      &_li a{
+        font-size: 14px;
+        font-weight: 700;
+        color: $black-bg;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__social{
+    display: flex;
+    gap: 15px;
+    @include screen-maxw(300px){
+      flex-wrap: wrap;
+    }
+  }
+}
+
+
+/*footer-copiright*/
+
+.footer-copiright{
+  margin-top: 40px;
+  margin-bottom: 55px;
+  font-size: 14px;
+  color: $gray-text;
+  @include screen-maxw(630px){
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__about{
+    width: calc((100%/12)*8);
+    @include screen-maxw(950px){
+      width: calc((100%/12)*9);
+    }
+    @include screen-maxw(630px){
+      width: 100%;
+    }
+  }
+  &__year{
+    width: calc((100%/12)*3);
+    text-align: right;
+    @include screen-maxw(630px){
+      width: 100%;
+      text-align: left;
+      margin-top: 15px;
+    }
+  }
+}

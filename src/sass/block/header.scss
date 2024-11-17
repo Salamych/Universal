@@ -128,8 +128,11 @@
   font-size: 12px;
   padding-left: $offset;
   &__title{
-    font-weight: 700;
-    color: $black-bg;
+    & a{
+      font-weight: 700;
+      color: $black-bg;
+    }
+    
   }
   &__price{
     color: $gray-text;

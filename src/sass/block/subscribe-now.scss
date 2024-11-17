@@ -1,0 +1,69 @@
+@import '../base/base.scss';
+@import '../config/variables.scss';
+@import '../config/mixin.scss';
+
+
+.subscribe-now{
+  &__title{
+    margin-top: 60px;
+    font-size: 40px;
+    font-family: $roboto;
+    font-weight: 700;
+    text-align: center;
+    @include screen-maxw(620px){
+      font-size: 30px;
+    }
+    @include screen-maxw(600px){
+      font-size: 25px;
+      margin-top: 30px;
+    }
+    @include screen-maxw(400px){
+      font-size: 20px;
+    }
+  }
+
+  &__form{
+    text-align: center;
+    margin-bottom: 70px;
+    @include screen-maxw(600px){
+      margin-bottom: 30px;
+    }
+    
+    &-email{
+      padding: 10px 15px;
+      border: 1px solid $gray-border;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 30%;
+      @include screen-maxw(990px){
+        width: 40%;
+      }
+      @include screen-maxw(800px){
+        width: 50%;
+      }
+      @include screen-maxw(600px){
+        width: 100%;
+      }
+
+      &::placeholder{
+        font-size: 14px;
+        color: $gray-text;
+      }
+    }
+
+    &-btn{
+      padding: 10px 30px;
+      border-radius: 20px;
+      border: none;
+      background-color: $blue-bg;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 700;
+      @include screen-maxw(600px){
+        margin-top: 15px;
+      }
+    }
+  
+  }
+  
+}
