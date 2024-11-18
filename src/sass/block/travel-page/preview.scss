@@ -1,0 +1,176 @@
+@import '../../base/base.scss';
+@import '../../config/variables.scss';
+@import '../../config/mixin.scss';
+
+.preview{
+  background-image: url(../img/bg-man-on-byke.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__wrapper{
+    display: flex;
+    gap: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    justify-content: center;
+    @include screen-maxw(600px){
+      flex-direction: column-reverse;
+      align-items: start;
+    }
+    @include screen-maxw(600px){
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__main{
+    width: calc((100%/12)*7);
+    @include screen-maxw(1020px){
+      width: calc((100%/12)*8);
+    }
+    @include screen-maxw(600px){
+      width: 100%;
+    }
+
+    &-rubric{
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    &-title{
+      position: relative;
+      font-family: $roboto;
+      font-size: 55px;
+      font-weight: 700;
+      color: #fff;
+
+      @include screen-maxw(800px){
+        font-size: 35px;
+      }
+      @include screen-maxw(600px){
+        font-size: 25px;
+      }
+
+      &::before{
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/svg/sprite.svg#bookmark-big);
+        left: -10%;
+        top: 8%;
+
+        @include screen-maxw(1020px){
+          display: none;
+        }
+      }
+    }
+
+    &-text{
+      font-size: 18px;
+      font-weight: 300;
+      color: #fff;
+      opacity: 0.85;
+      margin-bottom: 60px;
+    }
+
+    &-social{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color:#fff;
+      font-size: 12px;
+      @include screen-maxw(635px){
+        flex-direction: column;
+        align-items: start;
+      }
+      
+
+      &_time,
+      &_like,
+      &_comment{
+        display: flex;
+        gap: 5px;
+        opacity: 0.85;
+      }
+
+      & a{
+        color: #fff;
+      }
+
+      &_btn{
+        position: relative;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid rgba($color: #fff, $alpha: 0.4);
+        border-radius: 25px;
+        padding: 10px 25px 10px 50px;
+
+        
+
+        &::before{
+          position: absolute;
+          content: '';
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/svg/sprite.svg#share);
+          left: 20px;
+        }
+      }
+    }
+
+  }
+
+  &__asside{
+    width: calc((100%/12)*3);
+    font-size: 14px;
+    font-weight: 700;
+    @include screen-maxw(1020px){
+      width: calc((100%/12)*4);
+    }
+    @include screen-maxw(600px){
+      width: 100%;
+    }
+    
+    &-wrapper{
+      display: flex;
+      gap: 30px;
+      align-items: center;
+
+      @include screen-maxw(800px){
+        flex-direction: column;
+      }
+      @include screen-maxw(600px){
+        align-items: start;
+        gap: 15px;
+      }
+    }
+
+    &-home{
+      & a{
+        display: flex;
+        gap: 5px;
+        color: #fff;
+        align-items: center;
+      }
+    }
+    &-btn{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      @include screen-maxw(600px){
+        gap: 15px;
+      }
+
+      & a{
+        color: #fff;
+      }
+    }
+    
+    
+  }
+}
+
+
+

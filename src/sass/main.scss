@@ -5,11 +5,19 @@
 
 
 @import './block/header.scss';
-@import './block/news-top.scss';
-@import './block/recomendation-top.scss';
-@import './block/big-bloom.scss';
-@import './block/news-middle.scss';
-@import './block/news-foto-gallary.scss';
+/*----------------------------------*/
+/*main-page*/
+@import './block/main-page/news-top.scss';
+@import './block/main-page/recomendation-top.scss';
+@import './block/main-page/big-bloom.scss';
+@import './block/main-page/news-middle.scss';
+@import './block/main-page/news-foto-gallary.scss';
+
+/*travel-page*/
+
+@import './block/travel-page/preview.scss';
+
+/*----------------------------------*/
 @import './block/subscribe-now.scss';
 @import './block/footer.scss';
 
