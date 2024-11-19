@@ -21,7 +21,7 @@
     padding: $offset*2;
   }
   @include screen-maxw(600px){
-    padding: $offset/2 $offset $offset;
+    padding: 5px $offset $offset;
   }
 }
 
