@@ -1,0 +1,59 @@
+@import '../../base/base.scss';
+@import '../../config/variables.scss';
+@import '../../config/mixin.scss';
+
+.news-travel{
+  background-color: #f5f5f5;
+  padding-top: 60px;
+  padding-bottom: 90px;
+
+  &__list{
+    display: flex;
+    gap: 30px;
+    @include screen-maxw(920px){
+      flex-wrap: wrap;
+    }
+    &-item{
+      width: calc((100%/12)*3 - 15px);
+      @include screen-maxw(920px){
+        width: calc((100%/12)*4 - 30px);
+      }
+      @include screen-maxw(750px){
+        width: calc((100%/12)*6 - 60px);
+      }
+      @include screen-maxw(700px){
+        width: calc((100%/12)*6 - 40px);
+      }
+      @include screen-maxw(600px){
+        width: calc((100%/12)*6 - 15px);
+      }
+      @include screen-maxw(500px){
+        width:100%;
+      }
+
+      &_title{
+        font-family: $roboto;
+        font-size: 16px;
+        font-weight: 700;
+        color: $black-bg;
+      }
+
+      &_social{
+        font-size: 12px;
+        color: $gray-text;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-eye{
+          display: flex;
+          gap: 5px;
+        }
+        &-comments{
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
