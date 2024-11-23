@@ -152,6 +152,7 @@
   }
 
   &__item{
+    cursor: pointer;
     padding: $offset*2 $offset*2.5;
     border-top: 1px solid $gray-border;
     border-bottom: 1px solid $gray-border;
